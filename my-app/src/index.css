@@ -31,6 +31,9 @@
     width: 100%;
     border-radius: 20px;
 }
+.card>imgv#starlogo {
+    width: 20%;
+}
 
 /* On mouse-over, add a deeper shadow */
 .card:hover {
