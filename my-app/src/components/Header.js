@@ -1,9 +1,11 @@
 import Title from "./../components/Title";
-import { useState } from "react";
 import { Link } from "react-router-dom";
+import useIsOnline from "../utils/useIsOnline";
+import useAuth from "../utils/useAuth";
 
 const HeaderComponent = () => {
-  const [isLoggedIn, setLoggedIn] = useState(false);
+  const isOnline = useIsOnline();
+  const [isLoggedIn, setLoggedIn] = useAuth();
   const toggleLogin = () => {
     setLoggedIn(!isLoggedIn);
   };
@@ -13,19 +15,26 @@ const HeaderComponent = () => {
       <div className="nav-items">
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/">🏘 Home</Link>
           </li>
           <li>
             <Link to="/about">About</Link>
           </li>
           <li>
-            <Link to="/contact">Contact</Link>
+            <Link to="/contact">✍ Contact</Link>
           </li>
           <li>
-            <Link to="/cart">Cart</Link>
+            <Link to="/signin">👨‍🍳 Sign In</Link>
+          </li>
+          <li>
+            <Link to="/cart">🛍 Cart</Link>
+          </li>
+          <li>
+            <Link to="/instamart">Instamart</Link>
           </li>
         </ul>
       </div>
+      {isOnline ? "✔" : "☹"}
       {isLoggedIn ? (
         <button onClick={toggleLogin}>Logout</button>
       ) : (

@@ -6,10 +6,14 @@ import Carousel from "./Carousel";
 import ShimmerUi from "./ShimmerUi";
 import { filterRestaurants } from "../utils/helper";
 import useRestaurantList from "../utils/useRestaurantList";
+import useIsOnline from "../utils/useIsOnline";
+import useAuth from "../utils/useAuth";
 
 const Body = () => {
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const allRestaurants = useRestaurantList();
+  const isOnline = useIsOnline();
+  const [isLoggedIn] = useAuth();
 
   const handleCallback = (searchText) => {
     const filteredData = filterRestaurants(searchText, allRestaurants);
@@ -23,6 +27,12 @@ const Body = () => {
   if (!allRestaurants) return null;
   console.log("allRestaurants=> ", allRestaurants);
 
+  if (!isOnline) {
+    return <div>😲 No Internet connection!</div>;
+  }
+  if (!isLoggedIn) {
+    return <div>Please login again</div>;
+  }
   return allRestaurants?.length === 0 ? (
     <ShimmerUi />
   ) : (

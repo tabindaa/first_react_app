@@ -83,3 +83,7 @@
     margin: 20px;
     background: lightgray;
 }
+
+.instamart {
+    display: flex;
+}
