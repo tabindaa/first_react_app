@@ -31,6 +31,7 @@
     width: 100%;
     border-radius: 20px;
 }
+
 .card>imgv#starlogo {
     width: 20%;
 }
@@ -56,6 +57,7 @@
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+
 .search-container {
     position: sticky;
     width: 100%;
@@ -68,8 +70,16 @@
     -ms-flex-pack: center;
     justify-content: center;
 }
+
 .carousel-container {
     display: flex;
     flex-direction: row;
     min-height: 200px;
+}
+
+.shimmer-container {
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+    background: lightgray;
 }

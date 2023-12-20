@@ -1,42 +1,28 @@
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import RestaurantCard from "./RestaurantCard";
-import { LIST_API } from "./../config";
 import Search from "./Search";
 import Carousel from "./Carousel";
-import { useState, useEffect } from "react";
 import ShimmerUi from "./ShimmerUi";
-
-function filterRestaurants(searchText, restaurantList) {
-  return restaurantList.filter((res) =>
-    res.info.name.toLowerCase().includes(searchText.toLowerCase())
-  );
-}
+import { filterRestaurants } from "../utils/helper";
+import useRestaurantList from "../utils/useRestaurantList";
 
 const Body = () => {
-  const [allRestaurants, setAllRestaurants] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
+  const allRestaurants = useRestaurantList();
+
   const handleCallback = (searchText) => {
     const filteredData = filterRestaurants(searchText, allRestaurants);
     setFilteredRestaurants(!searchText ? allRestaurants : filteredData);
   };
 
   useEffect(() => {
-    fetchList();
-  }, []);
-
-  async function fetchList() {
-    const data = await fetch(LIST_API);
-    const json = await data.json();
-    setAllRestaurants(
-      json.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
-    setFilteredRestaurants(
-      json.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
-  }
+    setFilteredRestaurants(allRestaurants);
+  }, [allRestaurants]);
 
   if (!allRestaurants) return null;
+  console.log("allRestaurants=> ", allRestaurants);
 
-  // if(filteredRestaurants.length==0) return <div>No Restaurant match available!</div>
   return allRestaurants?.length === 0 ? (
     <ShimmerUi />
   ) : (
@@ -44,9 +30,17 @@ const Body = () => {
       <Search onSearchClick={handleCallback}></Search>
       <Carousel></Carousel>
       <div className="restaurant-list">
-        {filteredRestaurants.length==0 ? <div>No Restaurant matches available!</div> : filteredRestaurants.map((res) => {
-          return <RestaurantCard res={res.info} key={res.info.id} />;
-        })}
+        {filteredRestaurants.length == 0 ? (
+          <div>No Restaurant matches available!</div>
+        ) : (
+          filteredRestaurants.map((res) => {
+            return (
+              <Link to={"/restaurant/" + res.info.id} key={res.info.id}>
+                <RestaurantCard res={res.info} />
+              </Link>
+            );
+          })
+        )}
       </div>
     </>
   );
