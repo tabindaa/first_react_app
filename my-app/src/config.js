@@ -1,5 +1,7 @@
 export const IMG =
   "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_264,h_288,c_fill/";
+export const MENU_IMG =
+  "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_120,h_120,c_fit/";
 
 export const START_ICON_SVG =
   "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAABfklEQVR4nJ1US07DMBAdzbDiK0jtFNZQEAfgCixZQMWeEyDRKrQ0njVH4CCop6AIFmw4AR8JiQ0gVQVNrNLWsZO2I01kOfaz5817BigJxbAcMexJxhewBPPEegJr2uCVNnivmX4nMpvD9gbD6lRgscFTxfSeA3JSGXpThurF5RlMtKFBGdjotjRQBpvBm80ENg7KdJLjTEoIlsf4KBn+T68TnGYNKLwJntssXNMe5+6hgPyfagvU1iVEium7ALCXgUVNWPFIo6sM3WhD1xXGs+HBMpY5+w+7Lpex6DTqwK6H6Ocqw35IDZUO7CimJ3dfhaEG8gmU8alTOspJK6VDbejD3xzY9pc8Kv3WBZS5kHzioTW9FrNyaVjuoJaVk3kbG4HD70anMrZ9i2JeOBD3KENfNjGROb8asPUPKKL0CLsffhyo70jrRahzfEz1ua2X0rFXDmL0mR8HtjwHQ4wu3iwDkzXBm7khnNpGYc/XTWlAjrNpY5NhUdwkKeOyDX+y2YpbjkGv/AAAAABJRU5ErkJggg==";

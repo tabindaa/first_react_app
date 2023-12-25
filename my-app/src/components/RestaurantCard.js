@@ -1,16 +1,22 @@
-import { IMG, START_ICON_SVG } from "./../config";
+import { IMG } from "./../config";
 
 const RestaurantCard = ({ res }) => {
   return (
-    <div className="card">
-      <img alt="no text" src={IMG + res.cloudinaryImageId} />
-      <h4 className="text-ellipsis">{res.name}</h4>
+    <div className="w-[200px] shadow-2xl m-1 p-2">
+      <img
+        alt="no text"
+        src={IMG + res.cloudinaryImageId}
+        className="rounded-md"
+      />
+      <div className="text-ellipsis overflow-hidden font-bold text-2xl">
+        {res.name}
+      </div>
       {/* <img src={START_ICON_SVG} />{" "} */}
-      <h4>
+      <div>
         {" "}
         {res.avgRating} stars * {res.sla.slaString}
-      </h4>
-      <div className="text-ellipsis">{res.cuisines.join(", ")}</div>
+      </div>
+      <div className="truncate">{res.cuisines.join(", ")}</div>
     </div>
   );
 };

@@ -5,9 +5,7 @@ const Shimmer = () => {
       {Array(10)
         .fill("a")
         .map((i, j) => {
-          <div key={j} className="shimmer-container">
-           
-          </div>;
+          return <div key={j} className="shimmer-container"></div>;
         })}
     </div>
   );

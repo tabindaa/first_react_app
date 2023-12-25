@@ -1,4 +1,9 @@
-.header {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* .header {
     display: flex;
     justify-content: space-between;
     margin: 10px;
@@ -8,9 +13,9 @@
 .nav-items>ul {
     list-style-type: none;
     display: flex;
-}
+} */
 
-.nav-items>ul>li {
+/* .nav-items>ul>li {
     padding: 10px;
 }
 
@@ -30,22 +35,20 @@
 .card>img {
     width: 100%;
     border-radius: 20px;
-}
+} */
 
-.card>imgv#starlogo {
+/* .card>imgv#starlogo {
     width: 20%;
 }
 
-/* On mouse-over, add a deeper shadow */
+
 .card:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-}
+} */
 
-.restaurant-list {
-    /* min-height: 100vh; */
+/* .restaurant-list {
     display: flex;
     flex-wrap: wrap;
-    /* flex-direction: column; */
 }
 
 .footer {
@@ -86,4 +89,4 @@
 
 .instamart {
     display: flex;
-}
+} */

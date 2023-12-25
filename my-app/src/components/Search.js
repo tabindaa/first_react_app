@@ -10,14 +10,14 @@ const Search = ({ onSearchClick }) => {
     onSearchClick(text);
   };
   return (
-    <div className="search-container">
+    <div className="p-5 bg-pink-50 my-2">
       <input
         type="text"
         placeholder="Search"
         value={text}
         onChange={onChangeInput}
       />
-      <button onClick={onBtnClick}>Search</button>
+      <button className="px-2 bg-purple-500 text-white rounded-lg" onClick={onBtnClick}>Search</button>
     </div>
   );
 };

@@ -13,6 +13,8 @@ import AboutProfile from "./components/ProfileClass";
 import Shimmer from "./components/ShimmerUi";
 
 const Instamart = lazy(() => import("./components/Instamart"));
+const Signup = lazy(() => import("./components/SignupForm"));
+const Cart = lazy(() => import("./components/Cart"));
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const appRouter = createBrowserRouter([
   {
@@ -42,6 +44,22 @@ const appRouter = createBrowserRouter([
         element: (
           <Suspense fallback={<Shimmer />}>
             <Instamart />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/signin",
+        element: (
+          <Suspense fallback={<Shimmer />}>
+            <Signup />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/cart",
+        element: (
+          <Suspense fallback={<Shimmer />}>
+            <Cart />
           </Suspense>
         ),
       },

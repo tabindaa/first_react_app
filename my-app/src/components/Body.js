@@ -39,8 +39,8 @@ const Body = () => {
     <>
       <Search onSearchClick={handleCallback}></Search>
       <Carousel></Carousel>
-      <div className="restaurant-list">
-        {filteredRestaurants.length == 0 ? (
+      <div className="restaurant-list flex flex-wrap">
+        {filteredRestaurants.length === 0 ? (
           <div>No Restaurant matches available!</div>
         ) : (
           filteredRestaurants.map((res) => {
